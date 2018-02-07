@@ -1,0 +1,22 @@
+1. To display date and time
+   echo "date is `date +%D`"
+   echo "time is `date  +%X`"
+Output:
+   date is 02/07/18
+   time is 10:14:08  IST
+2.to check whether the number is positive or negative
+echo "Enter a grade"
+read grade
+if test $grade -gt 90
+then echo "A"
+elif test $grade -gt 80
+then echo "B"
+elif test $grade -gt 70
+then echo "C"
+else "Fail"
+fi
+Output:
+Enter a grade
+85
+B
+
