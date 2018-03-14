@@ -1,0 +1,73 @@
+1. print only odd number lines from the files
+
+$ awk 'NR%2==1' emp.lst
+
+Emp_id|Name|Designation|Salary
+2|Praveen|HR|170000
+4|Ramesh|Sales_head|120000
+
+2. awk command to print the last field without the number of fields in a line
+
+$ awk -F "|" '{print $NF}' emp.lst
+
+Salary
+200000
+170000
+150000
+120000
+100000
+
+3. equivalent awk command for the following
+a) head -n 5 emp.lst
+
+$ awk -F "|" 'NR==1,NR==5{print}' emp.lst
+
+Emp_id|Name|Designation|Salary
+1|Naveen|CEO|200000
+2|Praveen|HR|170000
+3|Mani|Manager|150000
+4|Ramesh|Sales_head|120000
+
+
+b) sed -n '5,10p' emp.lst
+
+$ awk -F "|" 'NR==3,NR==5{print}' emp.lst
+
+2|Praveen|HR|170000
+3|Mani|Manager|150000
+4|Ramesh|Sales_head|120000
+
+c) tail +20 emp.lst
+
+$ awk -F "|" 'NR==6,NR==11{print}' emp.lst
+
+5|Rajesh|Director|100000
+
+4.Write a awk command to delete all blank lines
+ 
+Before the execution of the awk command
+
+Emp_id|Name|Designation|Salary 
+1|Naveen|CEO|200000
+2|Praveen|HR|170000
+3|Mani|Manager|150000
+
+
+4|Ramesh|  Sales_head  |120000
+5|Rajesh|  Director  |100000
+
+
+$ awk 'NF' emp1.lst
+
+After the execution of the awk command
+
+Emp_id|Name|Designation|Salary 
+1|Naveen|CEO|200000
+2|Praveen|HR|170000
+3|Mani|Manager|150000
+4|Ramesh|Sales_head|120000
+5|Rajesh|Director|100000
+
+
+
+
