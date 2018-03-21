@@ -1,0 +1,40 @@
+copy()
+{
+        cp $a $b
+}
+
+remove()
+{
+        rm $a
+}
+
+rename()
+{
+  mv $a $b
+}
+
+compare()
+{
+        cmp $a $b
+
+}
+
+difference()
+{ 
+        diff $a $b
+}
+
+
+echo "Enter two files"
+read a b
+echo "Enter 1. to copy 2. to remove 3. rename 4. to compare 5. to find the difference"
+read s
+
+case $s in
+                1)copy ;;
+                2)remove ;;
+                3)rename ;;
+                4)compare ;;
+                5)difference ;;
+esac
+
